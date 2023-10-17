@@ -1,20 +1,20 @@
-<h1>Projeto feito com o servidor nakama e servir de base para futuros projetos</h1>
+<h1>Project made with the nakama server to serve as a basis for future projects</h1>
 
-<p>O que foi feito?</p>
+<p>What was done?</p>
 <ul>
   <li>
-    Configurado para usar o runtime com Typescript, sendo possível assim acessar as funcionalidades do servidor nakama, como funções RPCs.
+    Configured to use the Typescript runtime, making it possible to access nakama server features, such as RPC functions.
   </li>
 </ul>
 
-<p>Requisitos:</p>
+<p>Requirements:</p>
 <ul>
   <li>
-    Ter o docker instalado na máquina
+    Have docker installed on the machine.
   </li>
 </ul>
 
-<p>Como rodar?</p>
+<p>How to run?</p>
 <ul>
   <li>
     docker-compose up
