@@ -72,19 +72,24 @@ const matchInit = function (ctx: nkruntime.Context, logger: nkruntime.Logger, nk
 const matchJoinAttempt = function (ctx: nkruntime.Context, logger: nkruntime.Logger, nk: nkruntime.Nakama, dispatcher: nkruntime.MatchDispatcher, tick: number, state: LobbyMatchState, presence: nkruntime.Presence, metadata: { [key: string]: any }): { state: LobbyMatchState, accept: boolean, rejectMessage?: string | undefined } | null {
 
     let isAccept = true
-
-    if(Object.keys(state.players).length >= state.maxPlayers){
-        isAccept = false
+    const response = {
+        state,
+        accept: true,
+        rejectMessage: ''
     }
 
     if(state.gameState === GameState.InProgress){
         isAccept = false
+        response.rejectMessage = 'match in progress'
     }
 
-    return {
-        state,
-        accept: isAccept //se o jogador vai poder ou não entrar na partida
+    if(Object.keys(state.players).length >= state.maxPlayers){
+        isAccept = false
+        response.rejectMessage = 'full match'
     }
+
+    response.accept = isAccept
+    return response
 }
 
 const matchJoin = function (ctx: nkruntime.Context, logger: nkruntime.Logger, nk: nkruntime.Nakama, dispatcher: nkruntime.MatchDispatcher, tick: number, state: LobbyMatchState, presences: nkruntime.Presence[]): { state: LobbyMatchState } | null {
