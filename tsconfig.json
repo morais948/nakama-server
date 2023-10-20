@@ -11,6 +11,15 @@
     ],
   },
   "files": [
-    "main.ts"
+    "src/main.ts",
+    "src/matchs/classic/classic.ts",
+    "src/rpcs/create-match.ts",
+    "src/rpcs/get-state-match.ts",
+    "src/utils/util.ts",
+    "src/utils/codes-server.ts",
+    "src/types/classic-match-state.ts",
+    "src/types/game-state.ts",
+    "src/types/player.ts",
+    "src/types/position.ts"
   ],
 }

@@ -7,7 +7,7 @@ RUN npm install
 
 COPY tsconfig.json .
 
-COPY main.ts .
+COPY src/ src/
 
 RUN npx tsc
 
