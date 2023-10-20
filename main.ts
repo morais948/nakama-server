@@ -56,7 +56,7 @@ const matchInit = function (ctx: nkruntime.Context, logger: nkruntime.Logger, nk
         players: { }, 
         emptyTicks: 0,
         minPlayers: 2,
-        maxPlayers: 3,
+        maxPlayers: 5,
         requiredPlayers: 2,
         playerCount: 0,
         gameState: GameState.WaitingForPlayers
@@ -73,7 +73,11 @@ const matchJoinAttempt = function (ctx: nkruntime.Context, logger: nkruntime.Log
 
     let isAccept = true
 
-    if(Object.keys(state.players).length >= state.maxPlayers ){
+    if(Object.keys(state.players).length >= state.maxPlayers){
+        isAccept = false
+    }
+
+    if(state.gameState === GameState.InProgress){
         isAccept = false
     }
 
