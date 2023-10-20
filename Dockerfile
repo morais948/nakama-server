@@ -6,7 +6,9 @@ COPY package*.json .
 RUN npm install
 
 COPY tsconfig.json .
+
 COPY main.ts .
+
 RUN npx tsc
 
 FROM registry.heroiclabs.com/heroiclabs/nakama:3.17.1
