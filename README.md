@@ -5,6 +5,9 @@
   <li>
     Configured to use the Typescript runtime, making it possible to access nakama server features, such as RPC functions.
   </li>
+  <li>
+    Configured authoritative logic for a lobby and the course of a match.
+  </li>
 </ul>
 
 <p>Requirements:</p>
